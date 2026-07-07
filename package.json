@@ -1,7 +1,7 @@
 {
-  "name": "@devicai/openai",
+  "name": "@devic/model-gateway-sdk",
   "version": "0.1.0",
-  "description": "Experimental wrapper of the official OpenAI SDK that meters BYOK usage against Devic tenant/subtenant limits",
+  "description": "Experimental multi-provider LLM SDK (OpenAI client first) that meters BYOK usage against Devic tenant/subtenant limits",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -16,11 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/devicai/openai-sdk.git"
+    "url": "https://github.com/devicai/model-gateway-sdk.git"
   },
-  "homepage": "https://github.com/devicai/openai-sdk",
+  "homepage": "https://github.com/devicai/model-gateway-sdk",
   "bugs": {
-    "url": "https://github.com/devicai/openai-sdk/issues"
+    "url": "https://github.com/devicai/model-gateway-sdk/issues"
   },
   "engines": {
     "node": ">=20.0.0"

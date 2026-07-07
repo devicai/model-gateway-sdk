@@ -1,15 +1,15 @@
 import OpenAI, { type ClientOptions } from 'openai';
 
-export const DEFAULT_GATEWAY_URL = 'https://llm-metering-proxy.devic.ai/openai/v1';
+export const DEFAULT_GATEWAY_URL = 'https://model-gateway.devic.ai/openai/v1';
 
-export interface DevicOpenAIOptions extends ClientOptions {
+export interface OpenAIClientOptions extends ClientOptions {
   /** Devic tenant this usage should be attributed to and limited by. */
   tenantId: string;
   /** Your Devic API key (`devic-xxx`) — only used to resolve your tenant/limits, never sent to OpenAI. */
   devicApiKey: string;
   /** Optional subtenant, for per-end-user limits within a tenant. */
   subtenantId?: string;
-  /** Override the metering gateway URL (e.g. for local development against llm-metering-proxy). */
+  /** Override the metering gateway URL (e.g. for local development against model-gateway). */
   devicGatewayUrl?: string;
 }
 
@@ -21,11 +21,11 @@ export interface DevicOpenAIOptions extends ClientOptions {
  * `embeddings`, ...) is untouched, so anything new OpenAI ships keeps
  * working without changes here.
  */
-export class DevicOpenAI extends OpenAI {
-  constructor(opts: DevicOpenAIOptions) {
+export class OpenAIClient extends OpenAI {
+  constructor(opts: OpenAIClientOptions) {
     const { tenantId, devicApiKey, subtenantId, devicGatewayUrl, ...rest } = opts;
-    if (!tenantId) throw new Error('DevicOpenAI: "tenantId" is required.');
-    if (!devicApiKey) throw new Error('DevicOpenAI: "devicApiKey" is required.');
+    if (!tenantId) throw new Error('OpenAIClient: "tenantId" is required.');
+    if (!devicApiKey) throw new Error('OpenAIClient: "devicApiKey" is required.');
 
     super({
       ...rest,
