@@ -1,0 +1,44 @@
+{
+  "name": "@devicai/openai",
+  "version": "0.1.0",
+  "description": "Experimental wrapper of the official OpenAI SDK that meters BYOK usage against Devic tenant/subtenant limits",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devicai/openai-sdk.git"
+  },
+  "homepage": "https://github.com/devicai/openai-sdk",
+  "bugs": {
+    "url": "https://github.com/devicai/openai-sdk/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "devic",
+    "openai",
+    "llm",
+    "usage",
+    "metering",
+    "tenants",
+    "rate-limiting"
+  ],
+  "peerDependencies": {
+    "openai": "^6.0.0"
+  },
+  "devDependencies": {
+    "openai": "^6.27.0",
+    "typescript": "^5.6.0"
+  }
+}
