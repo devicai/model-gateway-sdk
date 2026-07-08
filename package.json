@@ -1,5 +1,5 @@
 {
-  "name": "@devic/model-gateway-sdk",
+  "name": "@devicai/model-gateway-sdk",
   "version": "0.1.0",
   "description": "Experimental multi-provider LLM SDK (OpenAI client first) that meters BYOK usage against Devic tenant/subtenant limits",
   "type": "module",

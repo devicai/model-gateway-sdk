@@ -1,4 +1,4 @@
-# @devic/model-gateway-sdk
+# @devicai/model-gateway-sdk
 
 **Experimental.** A multi-provider LLM SDK that meters your usage against [Devic](https://devic.ai)'s
 tenant/subtenant usage limits — the same engine Devic uses internally for its own assistants and agents.
@@ -18,13 +18,13 @@ changes to this package.
 ## Install
 
 ```bash
-npm install @devic/model-gateway-sdk openai
+npm install @devicai/model-gateway-sdk openai
 ```
 
 ## Usage
 
 ```ts
-import { OpenAIClient, isTenantLimitExceeded } from '@devic/model-gateway-sdk';
+import { OpenAIClient, isTenantLimitExceeded } from '@devicai/model-gateway-sdk';
 
 const client = new OpenAIClient({
   apiKey: process.env.OPENAI_API_KEY,     // your real OpenAI key — sent to OpenAI as usual
