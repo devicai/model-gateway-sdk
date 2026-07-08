@@ -1,7 +1,11 @@
 // OpenAI client — the first of several provider clients this package will
 // export as they're integrated (Anthropic, Gemini, ...).
 export { OpenAIClient, DEFAULT_GATEWAY_URL } from './openai/client.js';
-export type { OpenAIClientOptions } from './openai/client.js';
+export type {
+  OpenAIClientOptions,
+  DevicTenantMetadata,
+  DevicSubtenantMetadata,
+} from './openai/client.js';
 
 // Shared across every client this package exports.
 export type {
