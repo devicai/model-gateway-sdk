@@ -28,8 +28,8 @@ import { OpenAIClient, isTenantLimitExceeded } from '@devic/model-gateway-sdk';
 
 const client = new OpenAIClient({
   apiKey: process.env.OPENAI_API_KEY,     // your real OpenAI key — sent to OpenAI as usual
-  tenantId: 'acme-corp',                  // your Devic tenant
   devicApiKey: process.env.DEVIC_API_KEY, // devic-xxx
+  // tenantId: 'acme-corp',               // optional: attribute/limit usage to a Devic tenant
   // subtenantId: 'user-123',             // optional: per-end-user limits within the tenant
 });
 
@@ -53,6 +53,9 @@ try {
 ## Scope (v1) — this is an experiment
 
 - **`OpenAIClient` only.** Other provider clients are planned but not implemented yet.
+- **`tenantId` is optional.** Without it, requests still go through the gateway (BYOK passthrough) but
+  no tenant usage limits are checked or recorded — useful for call sites that don't need tenant scoping
+  yet while keeping the same SDK everywhere.
 - **No streaming.** `stream: true` requests are rejected by the gateway with a 400. Non-streaming JSON
   endpoints (chat completions, embeddings, the responses API, ...) all work, since the gateway is a
   generic passthrough rather than endpoint-specific logic.
